@@ -30,7 +30,7 @@
                     $(this).addClass(options.nonErrorClass);
                 }
             });
-            $(this).blur();
+            //$(this).blur();
         });
     };
 })(jQuery);
