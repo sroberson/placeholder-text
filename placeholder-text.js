@@ -13,7 +13,8 @@
         var defaults = {
             inputAttribute: 'placeholder',
             nonErrorClass: 'plain-text',
-            errorClass: 'error-text'
+            errorClass: 'error-text',
+            initialize: true
         };
 
         var options = $.extend(defaults, options);
@@ -39,7 +40,9 @@
                     $(this).addClass(options.nonErrorClass);
                 }
             });
-            //$(this).blur();
+            if (options.initialize) {
+                $(this).blur();
+            }
         });
     };
 })(jQuery);
