@@ -34,3 +34,34 @@
         });
     };
 })(jQuery);
+
+(function ($) {
+    $.fn.DefaultTextareaText = function (options) {
+        var $self = this;
+        var defaults = {
+            nonErrorClass: 'plain-text',
+            errorClass: 'error-text'
+        };
+
+        var options = $.extend(defaults, options);
+
+        return $self.each(function () {
+            $(this).each(function() {
+                $.data(this, 'default', this.value);
+            }).focus(function() {
+                if (!$.data(this, 'edited')) {
+                    this.value = "";
+                }
+            }).change(function() {
+                $.data(this, 'edited', this.value !== "");
+            }).blur(function() {
+                if (!$.data(this, 'edited')) {
+                    this.value = $.data(this, 'default');
+                }
+            });
+        });
+    };
+})(jQuery);
+
+
+
