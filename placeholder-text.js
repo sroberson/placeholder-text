@@ -1,3 +1,12 @@
+/* usage.....
+    $(function() {    
+        // call the plugins
+        $("input").not('input.file').DefaultInputText();
+        $("textarea").DefaultTextareaText(); 
+    });
+*/
+
+
 (function ($) {
     $.fn.DefaultInputText = function (options) {
         var $self = this;
