@@ -41,7 +41,9 @@
                 }
             });
             if (options.initialize) {
-                $(this).blur();
+                if ($(this).val() === "") {
+                    $(this).val($(this).attr(options.inputAttribute));
+                }
             }
         });
     };
